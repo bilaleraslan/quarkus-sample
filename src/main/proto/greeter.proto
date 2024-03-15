@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "be.com";
+option java_outer_classname = "HelloWorldProto";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc CalculateAge (CalculateAgeRequest) returns (CalculateAgeResponse) {}
+
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+  string lastName = 2;
+}
+
+
+// The response message containing the greetings
+message HelloReply {
+  string fullName = 1;
+}
+
+// The request message containing the user's name.
+message CalculateAgeRequest {
+  int32 birthYear = 1;
+}
+// The request message containing the user's name.
+message CalculateAgeResponse {
+  int32 age = 1;
+}
