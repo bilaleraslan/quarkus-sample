@@ -1,15 +1,7 @@
 package be.com.aws.localstack.s3;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.ResponseBuilder;
@@ -20,6 +12,10 @@ import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectResponse;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Path("/public/s3")
@@ -49,6 +45,7 @@ public class S3SyncClientResource extends CommonResource {
             return Response.serverError().build();
         }
     }
+
 
     @GET
     @Path("download/{objectKey}")

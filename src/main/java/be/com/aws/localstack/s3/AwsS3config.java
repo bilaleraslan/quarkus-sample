@@ -16,7 +16,7 @@ public class AwsS3config {
 
     static String ACCESS_KEY = "test";
     static String ACCESS_SECRET = "test";
-    static String ENDPOINT_URL = "http://10.6.0.56:4566"; // Example URL
+    static String ENDPOINT_URL = "http://10.6.0.41:4566"; // Example URL
 
     @Produces
     @Singleton
